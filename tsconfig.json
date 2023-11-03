@@ -1,0 +1,39 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "noImplicitReturns": false, // Caso true faz validacao dos retornos
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "removeComments": true,
+    "declaration": false,
+    "declarationDir": null,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "importHelpers": true,
+    "target": "ES6",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "ES2018",
+      "dom"
+    ]
+  },
+  "angularCompilerOptions": {
+    "enableIvy": true,
+    "annotateForClosureCompiler": true,
+    "strictInjectionParameters": true,
+    "fullTemplateTypeCheck": true
+  }
+}
