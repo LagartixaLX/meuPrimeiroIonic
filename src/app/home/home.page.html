@@ -1,22 +1,25 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      João Victor
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Olá
-    </strong>
+  <ion-text>
+      <h1>Lagartixa</h1>
+  </ion-text>
 
 
+
+  <div class = "login-text">
+
+      <ion-input [(ngModel)]="user_name" class="username"  shape="round" placeholder="Username">
+        <ion-icon  src = "/src/assets/Icones/login.svg" ></ion-icon >
+      </ion-input>
+
+      <ion-input [(ngModel)]="pass_word" class="password" type="password"  shape="round" placeholder="Password">
+        <ion-icon  src = "/src/assets/Icones/return.svg" ></ion-icon >
+      </ion-input>
   </div>
+
+  <ion-button (click)="login_page()" class = "sigin-btn" shape="round" expand="small">Login</ion-button>
+
+
+
+
 </ion-content>
