@@ -8,16 +8,16 @@
 
   <div class = "login-text">
 
-      <ion-input [(ngModel)]="user_name" class="username"  shape="round" placeholder="Username">
-        <ion-icon  src = "/src/assets/Icones/login.svg" ></ion-icon >
+      <ion-input [(ngModel)]="user_name" class="username"  shape="round" placeholder="Usuário">
       </ion-input>
 
-      <ion-input [(ngModel)]="pass_word" class="password" type="password"  shape="round" placeholder="Password">
-        <ion-icon  src = "/src/assets/Icones/return.svg" ></ion-icon >
+      <ion-input [(ngModel)]="pass_word" class="password" type="password"  shape="round" placeholder="Senha">
       </ion-input>
   </div>
 
-  <ion-button (click)="login_page()" class = "sigin-btn" shape="round" expand="small">Login</ion-button>
+  <ion-button (click)="login_page()" class = "sigin-btn" shape="round" expand="small">
+    <ion-icon  src = "/src/assets/Icones/login.svg" ></ion-icon >
+    Entrar</ion-button>
 
 
 
