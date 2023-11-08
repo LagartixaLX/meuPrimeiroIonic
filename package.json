@@ -15,7 +15,7 @@
   "dependencies": {
     "@angular/common": "^14.2.11",
     "@angular/core": "^14.2.11",
-    "@angular/fire": "^16.0.0",
+    "@angular/fire": "^6.1.5",
     "@angular/forms": "^14.2.11",
     "@angular/platform-browser": "^14.2.11",
     "@angular/platform-browser-dynamic": "^14.2.11",
@@ -35,7 +35,7 @@
     "@ionic/angular": "~6.3.7",
     "@ionic/cli": "^6.20.9",
     "@ionic/cordova-builders": "^10.0.0",
-    "firebase": "^10.5.2",
+    "firebase": "^8.10.0",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
