@@ -1,50 +1,23 @@
 import { Component } from '@angular/core';
-import {LoadingController, ToastController} from "@ionic/angular";
-import {Router} from "@angular/router";
+import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-login',
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
 })
 export class HomePage {
 
-  constructor(public toastController:ToastController,
-              public loadingController:LoadingController,
-              private router:Router)
-              {
-                //this.router.navigate(['/login'])
-              }
+  constructor(private authService: AuthService) {}
 
-  user_name:any='';
-  pass_word:any='';
-
-
-  async showToast(msg,color)
-  {
-    const toast = await this.toastController.create({
-      message: msg,
-      duration: 2000,
-      color:color
-    });
-    toast.present();
+  login(email: string, password: string) {
+    this.authService.login(email, password)
+      .then(() => {
+        console.log('Login bem-sucedido');
+        // Redirecionar para a próxima página após o login
+      })
+      .catch(error => {
+        console.error('Erro de login:', error);
+      });
   }
-
-  async login_page() {
-    if (this.user_name.length == 0) {
-      this.showToast("Insira o Usuario", "danger");
-    }
-    else if (this.pass_word.length == 0) {
-      this.showToast("Insira sua senha.", "danger");
-    }
-    else {
-          if((this.user_name == "joao") && (this.pass_word == "123")){
-            this.router.navigate(['/login'])
-          }
-          else{
-            this.showToast("Usuario ou senha Incorreto", "danger");
-          }
-    }
-  }
-
 }
