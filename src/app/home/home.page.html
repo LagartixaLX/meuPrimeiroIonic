@@ -2,11 +2,11 @@
 <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
 <ion-button expand="block" (click)="login(email, password)">Login</ion-button> -->
 <ion-content [fullscreen]="true">
-  
-        <ion-text>
-            <h1>Sistema</h1> 
-        </ion-text>
-    
+
+    <ion-text>
+        <h1>Sistema</h1>
+    </ion-text>
+
 
 
     <div class="login-text">
@@ -23,8 +23,14 @@
 
     </div>
 
+    <ion-button (click)="irParaRegistro()">Registrar</ion-button>
+    
     <ion-button (click)="login(email,password)" class="sigin-btn" shape="round" expand="small">
         <ion-icon name="finger-print-outline"></ion-icon>
         Entrar</ion-button>
+
+    
+
+
 
 </ion-content>
