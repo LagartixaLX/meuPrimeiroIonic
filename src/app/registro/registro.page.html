@@ -1,19 +1,28 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Registro</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true">
+
+  <ion-text>
+      <h1>Registro de Usuários</h1>
+  </ion-text>
 
 <ion-content>
-  <ion-item>
-    <ion-label position="stacked">E-mail</ion-label>
-    <ion-input type="email" [(ngModel)]="email"></ion-input>
-  </ion-item>
 
-  <ion-item>
-    <ion-label position="stacked">Senha</ion-label>
-    <ion-input type="password" [(ngModel)]="senha"></ion-input>
-  </ion-item>
+  <div class="reg-text">
 
-  <ion-button expand="block" (click)="registrar()">Registrar</ion-button>
+
+  
+    <ion-input type="email" [(ngModel)]="email" expand="small" class="regemail" shape="round" placeholder="Email">
+      <ion-icon name="person-circle-outline"></ion-icon></ion-input>
+
+  
+    <ion-input type="password" [(ngModel)]="senha" class="regpassword" shape="round" placeholder="Senha">
+      <ion-icon name="key-outline"></ion-icon></ion-input>
+
+
+  </div>
+
+
+  <ion-button expand="block" (click)="registrar()" class="reg-btn" shape="round">Registrar</ion-button>
+
+  
+
 </ion-content>

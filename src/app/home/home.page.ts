@@ -14,6 +14,10 @@ export class HomePage {
 
   constructor(private authService: AuthService, private router: Router) { }
 
+  irParaRegistro() {
+    this.router.navigate(['/registro']);
+  }
+
   login(email: string, password: string) {
     this.authService.login(email, password)
       .then(() => {
@@ -25,11 +29,7 @@ export class HomePage {
       .catch(error => {
         console.error('Erro de login:', error);
       });
-
-    irParaRegistro() {
-      this.router.navigate(['/registro']);
-
-    }
-
   }
 }
+
+
