@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
+import {FirebaseError} from 'firebase/app';
+//import { AngularFireAuth } from '@angular/fire/compat/auth';
+//import { Router } from '@angular/router';
+//import {AlertController} from '@ionic/angular';
 
 @Component({
   selector: 'app-registro',
@@ -9,21 +12,23 @@ import { Router } from '@angular/router';
 })
 export class RegistroPage {
 
-  email: string;
-  senha: string;
+  email: string = '';
+  password: string = '';
+  errorMessage: string = '';
 
-  constructor(private afAuth: AngularFireAuth, private router: Router) {}
+  constructor(private authService: AuthService) {}
 
-  registrar() {
-    this.afAuth.createUserWithEmailAndPassword(this.email, this.senha)
-      .then(() => {
-        console.log('Usuário registrado com sucesso!');
-        // Redirecionar para outra página após o registro (opcional)
-        this.router.navigate(['/outra-pagina']);
-      })
-      .catch(error => {
-        console.error('Erro ao registrar usuário:', error);
-      });
+  async registrar() {
+    try {
+      await this.authService.signInWithEmailAndPassword(this.email, this.password);
+      console.log('Login bem-sucedido!');
+      this.errorMessage = ''; // Limpa a mensagem de erro em caso de sucesso
+    } catch (error) {
+      if (error instanceof FirebaseError) {
+        this.errorMessage = error.message; // Exibe a mensagem de erro específica para o usuário
+      } else {
+        this.errorMessage = 'Ocorreu um erro desconhecido. Tente novamente mais tarde.';
+      }
+    }
   }
-
 }

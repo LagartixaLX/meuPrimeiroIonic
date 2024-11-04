@@ -9,24 +9,23 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireAuthModule } from '@angular/fire/auth';
+//import { AngularFireModule } from '@angular/fire';
+//import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyC826rBmgwTVH6ZHGlifQWdP7lqwaASDTk",
-  authDomain: "primeiro-ionic-93478.firebaseapp.com",
-  projectId: "primeiro-ionic-93478",
-  storageBucket: "primeiro-ionic-93478.appspot.com",
-  messagingSenderId: "230301216425",
-  appId: "1:230301216425:web:8301f8787f7b0b5de903b8",
-  measurementId: "G-1T8Z6LX9XH"
-};
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+
+import {environment} from '../environments/environment';
+
+
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule],
+  imports: [BrowserModule,
+     IonicModule.forRoot(),
+      AppRoutingModule,
+      provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+      provideAuth(() => getAuth())],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
   entryComponents: [],
