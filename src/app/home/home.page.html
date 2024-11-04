@@ -1,22 +1,40 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      João Victor moreira
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<!--<ion-input type="email" placeholder="Email" [(ngModel)]="email"></ion-input>
+<ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+<ion-button expand="block" (click)="login(email, password)">Login</ion-button> -->
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Olá Mundo bom!
-    </strong>
+    <ion-text>
+        <h1>Sistema</h1>
+    </ion-text>
 
 
-  </div>
+
+    <div class="login-text">
+
+        <ion-item *ngIf="errorMessage">
+            <ion-label color="danger">{{ errorMessage }}</ion-label>
+          </ion-item>
+
+
+        <ion-input [(ngModel)]="email" type="email" expand="small" class="email" shape="round" placeholder="Usuário">
+            <ion-icon name="person-circle-outline"></ion-icon>
+        </ion-input>
+
+        <ion-input [(ngModel)]="password" class="password" type="password" shape="round" placeholder="Senha">
+            <ion-icon name="key-outline"></ion-icon>
+        </ion-input>
+
+
+    </div>
+
+ <ion-button (click)="irParaRegistro()" class="signup-btn" shape="round" expand="small">Registrar</ion-button>
+
+    <ion-button (click)="login(email,password)" class="signin-btn" shape="round" expand="small">
+        <ion-icon name="finger-print-outline"></ion-icon>
+        Entrar</ion-button>
+
+
+
+
+
 </ion-content>

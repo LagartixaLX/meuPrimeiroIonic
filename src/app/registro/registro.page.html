@@ -1,0 +1,28 @@
+<ion-content [fullscreen]="true">
+
+  <ion-text>
+      <h1>Registro de Usuários</h1>
+  </ion-text>
+
+<ion-content>
+
+  <div class="reg-text">
+
+
+  
+    <ion-input type="email" [(ngModel)]="email" expand="small" class="regemail" shape="round" placeholder="Email">
+      <ion-icon name="person-circle-outline"></ion-icon></ion-input>
+
+  
+    <ion-input type="password" [(ngModel)]="password" class="regpassword" shape="round" placeholder="Senha">
+      <ion-icon name="key-outline"></ion-icon></ion-input>
+
+
+  </div>
+
+
+  <ion-button expand="block" (click)="registrar()" class="reg-btn" shape="round">Registrar</ion-button>
+
+  
+
+</ion-content>
